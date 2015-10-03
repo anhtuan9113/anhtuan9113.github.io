@@ -1,0 +1,10 @@
+# Site settings
+title: Clouds Player - Play your music on google drive, dropbox, box
+email: TuanNA9113@gmail.com
+description: Play your music on google drive, dropbox, box
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://cloudsplayer.com" # the base hostname & protocol for your site
+
+
+# Build settings
+markdown: kramdown

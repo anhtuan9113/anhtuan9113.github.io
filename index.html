@@ -1,0 +1,149 @@
+---
+layout: default
+---
+<div id="mainPage">
+    <div class="col-md-12" id="fileList">
+        <div class="row">
+            <table id="songList" class="table table-hover">
+                <tr ng-repeat="file in files" ng-click="play(file)">
+                    <td style="width: 50px">
+                        <img ng-if="file.isPlaying" style="margin: 5px" src="images/equalizer.gif" width="100%">
+                    </td>
+                    <td style="width: 50px">
+                        <div class="music-icon" ng-if="file && !file.thumbnailLink"><i class="fa fa-music"></i></div>
+                        <img ng-if="file && file.thumbnailLink" src="[{file.thumbnailLink}]" width="50px" height="50px"
+                             alt="" class="">
+                    </td>
+                    <td>
+                        <span class="file-title">[{file.title}]</span><br/>
+                        <span>Created at [{file.createdDate}] by <i>[{ file.ownerNames[0] }]</i></span>
+                    </td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+
+    <div id="audio-player" class="audio-player" ng-click="togglePlayer()">
+        <div id="jpId" style="width: 0px; height: 0px;"><img id="jp_poster_0"
+                                                             style="width: 0px; height: 0px; display: none;">
+            <audio id="jp_audio_0" preload="metadata" src="http://teothemes.com/html/music/media/4.mp3"
+                   title="I'm coming home"></audio>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-3 col-xs-6 no-padding hidden-xs">
+                    <img class="song-image hidden-sm hidden-xs"
+                         src="[{currentFile.thumbnailLink || 'images/music-icon.ico'}]" alt="">
+
+                    <div class="song">
+                        <img src="images/player-bars.png" alt="">
+
+                        <div class="song-title">[{currentFile.title || 'Please choose song'}]</div>
+                        <div class="price"></div>
+                    </div>
+                </div>
+                <div class="col-sm-9 col-xs-6 no-padding">
+                    <div class="player-controls">
+                        <div id="player-bar-big" class="player-progress hidden-xs">
+                            <div class="time">
+                                <span class="currentTime pull-left">00:00</span>
+                                <span class="duration pull-right">00:00</span>
+                            </div>
+                            <div class="jp-progress">
+                                <div class="jp-seek-bar" style="width: 100%;">
+                                    <div class="jp-play-bar" style="width: 0%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="control">
+                            <button class="add-to-cart-button" ng-click="nextFile(true, $event)">
+                                <i class="fa fa-step-backward"></i>
+                            </button>
+                        </div>
+                        <div class="control">
+                            <button ng-click="togglePlay($event)" type="button" class="audio-play"
+                                    style="display: inline-block;">
+                                <i class="fa fa-play"
+                                   ng-class="{'fa-pause' : player.state == 'playing', 'fa-play':  player.state == 'paused' || player.state == null }"></i>
+                            </button>
+                        </div>
+                        <div class="control">
+                            <button class="add-to-wishlist-button" ng-click="nextFile(false, $event)">
+                                <i class="fa fa-step-forward"></i>
+                            </button>
+                        </div>
+                        <div class="control">
+                            <button type="button" class="audio-mute" style="display: inline-block;"><i
+                                    class="fa fa-volume-up"></i></button>
+                            <button type="button" class="audio-unmute" style="display: none;"><i
+                                    class="fa fa-volume-off"></i></button>
+                            <div class="jp-volume-bar">
+                                <div class="jp-volume-bar-value" style="height:0%;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div id="player-bar-small">
+                <div class="song-title">[{currentFile.title || 'Please choose song'}]</div>
+                <div class="jp-progress visible-xs">
+                    <div class="jp-seek-bar" style="width: 100%;">
+                        <div class="jp-play-bar" style="width: 0%;"></div>
+                    </div>
+
+                </div>
+                <div class="time visible-xs">
+                    <span class="currentTime pull-left">00:00</span>
+                    <span class="duration pull-right">00:00</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="playerBox" class="col-md-12">
+    <div class="row">
+        <div class="col-md-12">
+            <i class="fa fa-chevron-left back-button" ng-click="togglePlayer()"> Back</i>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-7">
+            <div class="row">
+                <div class="col-md-12">
+                    <video id="player" controls class="video-js small-player-box"></video>
+                </div>
+                <div class="col-md-12">
+                    <div class="col-md-12 box box-primary">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h4> [{ currentFile && currentFile.title }] </h4>
+
+                                <div class="sort-line"></div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="col-xs-2" style="max-width: 75px">
+                                        <img width="90%" src="[{ currentFile && currentFile.owners[0].picture.url }] "/>
+                                    </div>
+                                    <div class="col-xs-10 no-padding">
+                                        <span class="owner-name">[{ currentFile && currentFile.owners[0].displayName }]</span><br/>
+                                        <span class="text-info">[{ currentFile && currentFile.createdDate | date : 'medium' }]</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-md-5">
+            <textarea ng-if="currentFile.lyric &&  currentFile.lyric != '' " readonly class="lyric">[{ currentFile.lyric }]</textarea>
+
+        </div>
+    </div>
+</div>

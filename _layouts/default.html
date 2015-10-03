@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html ng-cloak="">
+{% include head.html %}
+
+<body ng-controller="FileListCtrl" class="with-search-header">
+<div class="container-fluid no-padding">
+    <div class="row no-margin">
+        <div class="col-xs-12 no-padding">
+            {% include header.html %}
+
+            {{ content }}
+
+            {% include footer.html %}
+        </div>
+    </div>
+</div>
+
+</body>
+
+</html>
