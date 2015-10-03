@@ -25,12 +25,11 @@ layout: default
 
     </div>
 
+    <div class="col-md-12" >
+        <button class="btn pull-left" ng-show="currentPage > -1" ng-click="previousPage()"><i class="fa fa-arrow-left"></i> Previous</button>
+        <button class="btn pull-right" ng-show="haveNextPage" ng-click="nextPage()">Next <i class="fa fa-arrow-right"></i> </button>
+    </div>
     <div id="audio-player" class="audio-player" ng-click="togglePlayer()">
-        <div id="jpId" style="width: 0px; height: 0px;"><img id="jp_poster_0"
-                                                             style="width: 0px; height: 0px; display: none;">
-            <audio id="jp_audio_0" preload="metadata" src="http://teothemes.com/html/music/media/4.mp3"
-                   title="I'm coming home"></audio>
-        </div>
         <div class="container-fluid">
             <div class="row">
                 <div class="col-sm-3 col-xs-6 no-padding hidden-xs">
@@ -107,7 +106,10 @@ layout: default
 <div id="playerBox" class="col-md-12">
     <div class="row">
         <div class="col-md-12">
-            <i class="fa fa-chevron-left back-button" ng-click="togglePlayer()"> Back</i>
+            <button style="
+    margin-bottom: 10px;
+    margin-top: 10px;
+" class="btn"><i class="fa fa-chevron-left " ng-click="togglePlayer()"> Back</i></button>
         </div>
     </div>
     <div class="row">
