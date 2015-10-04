@@ -105,20 +105,12 @@ layout: default
 
 <div id="playerBox" class="col-md-12">
     <div class="row">
-        <div class="col-md-12">
-            <button ng-click="togglePlayer()" style="
-    margin-bottom: 10px;
-    margin-top: 10px;
-" class="btn"><i class="fa fa-chevron-left " > Back</i></button>
-        </div>
-    </div>
-    <div class="row">
         <div class="col-md-7">
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-12 margin-t15">
                     <video id="player" controls class="video-js small-player-box"></video>
                 </div>
-                <div class="col-md-12">
+                <div class="col-md-12 margin-b15">
                     <div class="col-md-12 box box-primary">
                         <div class="row">
                             <div class="col-md-12">
@@ -133,7 +125,7 @@ layout: default
                                     </div>
                                     <div class="col-xs-10 no-padding">
                                         <span class="owner-name">[{ currentFile && currentFile.owners[0].displayName }]</span><br/>
-                                        <span class="text-info">[{ currentFile && currentFile.createdDate | date : 'medium' }]</span>
+                                        <span class="" style="    color: #ABABAB;">[{ currentFile && currentFile.createdDate | date : 'medium' }]</span>
                                     </div>
                                 </div>
                             </div>
@@ -143,7 +135,7 @@ layout: default
 
             </div>
         </div>
-        <div class="col-md-5">
+        <div class="col-md-5 margin-t15">
             <textarea ng-if="currentFile.lyric &&  currentFile.lyric != '' " readonly class="lyric">[{ currentFile.lyric }]</textarea>
 
         </div>
