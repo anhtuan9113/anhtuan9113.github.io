@@ -32,6 +32,11 @@
             }
             return 1 - (result + 4*Math.abs(strA.length - strB.length))/(2*(strA.length+strB.length));
         }
+
+        function getRandomInt(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
         function checkAuth() {
             player = videojs("player", {"controls": true, "autoplay": true, "preload": "auto"});
 

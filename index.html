@@ -48,6 +48,8 @@ layout: default
                         <div id="player-bar-big" class="player-progress hidden-xs">
                             <div class="time">
                                 <span class="currentTime pull-left">00:00</span>
+                                <span ng-click="changePlayerMode($event,'nextFileMode', 'random')" class="button" ng-class=" {'active': player.nextFileMode == 'random' } "><i class="fa fa-random"></i></span>
+                                <span ng-click="changePlayerMode($event,'repeatMode', 'repeat')" class="button" ng-class=" {'active': player.repeatMode == 'repeat' } "><i class="fa fa-repeat"></i></span>
                                 <span class="duration pull-right">00:00</span>
                             </div>
                             <div class="jp-progress">
