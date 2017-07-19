@@ -1,7 +1,6 @@
-<head> <meta name="viewport" content="width=device-width,initial-scale=1"> <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title> <meta name="description" content="{{ site.description }}"> <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}"> <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> <link rel="stylesheet" href="css/vendor.min.css"> <link rel="stylesheet" href="css/style.min.css"> <script src="js/vendor.min.js"></script> <script src="js/source.min.js"></script> <script type="text/javascript">var CLIENT_ID = '327787094054-drtk3gpgvb2moj7rugs5j0c5bj5q2k7j.apps.googleusercontent.com',
-                SCOPES = ['https://www.googleapis.com/auth/drive',
-                            'https://www.googleapis.com/auth/plus.me'],
-                player = null;
+<head> <meta name="viewport" content="width=device-width,initial-scale=1"> <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title> <meta name="description" content="{{ site.description }}"> <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}"> <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> <link rel="stylesheet" href="css/vendor.min.css"> <link rel="stylesheet" href="css/style.min.css" media="all"> <script src="js/vendor.min.js"></script> <script src="js/source.min.js"></script> <script type="text/javascript">const CLIENT_ID = '327787094054-drtk3gpgvb2moj7rugs5j0c5bj5q2k7j.apps.googleusercontent.com',
+            SCOPES = ['https://www.googleapis.com/auth/drive', 'https://www.googleapis.com/auth/plus.me', 'https://www.googleapis.com/auth/youtube'];
+        var PLAYER = null;
         String.prototype.toHHMMSS = function () {
             var sec_num = parseInt(this, 10); // don't forget the second param
             var hours = Math.floor(sec_num / 3600);
@@ -22,19 +21,19 @@
             return time;
         };
 
-        String.prototype.capitalizeFirstLetter = function() {
+        String.prototype.capitalizeFirstLetter = function () {
             return this.charAt(0).toUpperCase() + this.slice(1);
-        }
+        };
 
-        function compare(strA,strB){
-            for(var result = 0, i = strA.length; i--;){
-                if(typeof strB[i] == 'undefined' || strA[i] == strB[i]);
-                else if(strA[i].toLowerCase() == strB[i].toLowerCase())
+        function compare(strA, strB) {
+            for (var result = 0, i = strA.length; i--;) {
+                if (typeof strB[i] == 'undefined' || strA[i] == strB[i]);
+                else if (strA[i].toLowerCase() == strB[i].toLowerCase())
                     result++;
                 else
                     result += 4;
             }
-            return 1 - (result + 4*Math.abs(strA.length - strB.length))/(2*(strA.length+strB.length));
+            return 1 - (result + 4 * Math.abs(strA.length - strB.length)) / (2 * (strA.length + strB.length));
         }
 
         function getRandomInt(min, max) {
@@ -44,10 +43,18 @@
         function checkAuth() {
             console.log("bootstrap");
             angular.bootstrap(document, ['cloudPlayer']);
-        }</script> <script src="https://apis.google.com/js/client.js?onload=checkAuth"></script> <script src="js/jwplayer.js"></script> <script>jwplayer.key = "E4YhhNshxIEFeh4KD9KKzznGT1BbMXSX5Mm0CA";</script> <script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+            $('#loading').hide();
+        }</script> <script src="https://apis.google.com/js/client.js?onload=checkAuth"></script> <script src="js/jwplayer.js"></script> <script>jwplayer.key = "E4YhhNshxIEFeh4KD9KKzznGT1BbMXSX5Mm0CA";</script> <script>(function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
         ga('create', 'UA-68404852-1', 'auto');
         ga('send', 'pageview');</script> 

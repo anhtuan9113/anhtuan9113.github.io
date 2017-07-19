@@ -2,19 +2,18 @@
 <html ng-cloak="">
 {% include head.html %}
 
-<body ng-controller="FileListCtrl" class="with-search-header">
-<div class="container-fluid no-padding">
-    <div class="row no-margin">
-        <div class="col-xs-12 no-padding">
-            {% include header.html %}
+<body class="with-search-header page-template page-template-page-templates page-template-page-builder page-template-page-templatespage-builder-php page page-id-385">
+{% include header.html %}
+<div class="main-content" >
+    {{ content }}
+</div>
+{% include footer.html %}
 
-            {{ content }}
-
-            {% include footer.html %}
-        </div>
+<div class="loading" id="loading">
+    <div class="v-cell text-center">
+        <i class="fa fa-circle-o-notch fa-spin fa-5x fa-fw"> </i>
+      <!--  <img src="images/loading.gif">-->
     </div>
 </div>
-
 </body>
-
 </html>
