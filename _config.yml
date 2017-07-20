@@ -1,7 +1,7 @@
 # Site settings
-title: CloudsPlayer streams your music from Dropbox and Google Drive
+title: CloudsPlayer streams your music from  Google Drive
 email: TuanNA9113@gmail.com
-description: Play your music on google drive and dropbox. Streams your video from Dropbox and Google Drive. Upload your music to google drive and dropbox.
+description: Play your music on google drive and dropbox. Save youtube video to google drive. Streams your video from Dropbox and Google Drive. Upload your music to google drive and dropbox.
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://cloudsplayer.com" # the base hostname & protocol for your site
 
