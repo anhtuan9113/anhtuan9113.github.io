@@ -5,7 +5,14 @@
 <body class="with-search-header page-template page-template-page-templates page-template-page-builder page-template-page-templatespage-builder-php page page-id-385">
 {% include header.html %}
 <div class="main-content" >
-    {{ content }}
+    <div id="content" class="site-content">
+        <div class="container-fluid soundtheme-mod-playlist soundtheme-container soundtheme-mod-dark "
+             style="min-height: 100%">
+            <div class="container">
+                {{ content }}
+            </div>
+        </div>
+    </div>
     <div class="clearfix"></div>
 </div>
 {% include footer.html %}
