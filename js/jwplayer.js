@@ -6,22 +6,22 @@ window.jwplayer=function(e){function t(n){if(i[n])return i[n].exports;var r=i[n]
 },,,,,,function(e,t,n){var i=n(179);"string"==typeof i&&(i=[["all-players",i,""]]),n(49).style(i,"all-players"),i.locals&&(e.exports=i.locals)}]);
 jwplayer.defaults = {
     "aspectratio": "16:9",
-    "autostart": false,
-    "controls": true,
+    "autostart": true,
+    "controls": false,
     "displaydescription": false,
     "displaytitle": false,
     "flashplayer": "//ssl.p.jwpcdn.com/player/v/7.12.2/jwplayer.flash.swf",
-    "height": 260,
-    "key": "tZqhtJFe83vrtKhWUVQ1Ebt+1tIkKuIOAWZtT2dSvb2nf5uERVvjLw==",
+    "height": 270,
+    "key": "W8LDXWx/tSy4tOVA/cS/nJExaisQ2Cbf/QwdURZeC/rL3QPPiPX7e/WD9HE=",
     "mute": false,
     "ph": 1,
-    "pid": "z3exF2NE",
+    "pid": "NxsmWX2o",
     "plugins": {
-        "https://assets-jpcust.jwpsrv.com/player/6/6124956/ping.js": {
-            "pixel": "https://content.jwplatform.com/ping.gif"
+        "http://assets-jpcust.jwpsrv.com/player/6/6124956/ping.js": {
+            "pixel": "http://content.jwplatform.com/ping.gif"
         }
     },
-    "preload": "none",
+    "preload": "auto",
     "primary": "html5",
     "repeat": false,
     "stagevideo": false,
