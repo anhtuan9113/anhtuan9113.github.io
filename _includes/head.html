@@ -46,7 +46,32 @@
             console.log("bootstrap");
             angular.bootstrap(document, ['cloudPlayer']);
             $('#loading').hide();
-        }</script> <script src="https://apis.google.com/js/client.js?onload=checkAuth"></script> <script src="js/jwplayer.js"></script> <script>jwplayer.key = "E4YhhNshxIEFeh4KD9KKzznGT1BbMXSX5Mm0CA";</script> <script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        }</script> <script src="https://apis.google.com/js/client.js?onload=checkAuth"></script> <script src="js/jwplayer.js"></script> <script>jwplayer.key = "E4YhhNshxIEFeh4KD9KKzznGT1BbMXSX5Mm0CA";</script> <script>jwplayer.defaults = {
+            "aspectratio": "16:9",
+            "autostart": true,
+            "controls": false,
+            "displaydescription": false,
+            "displaytitle": false,
+            "flashplayer": "//ssl.p.jwpcdn.com/player/v/7.12.2/jwplayer.flash.swf",
+            "height": 270,
+            "key": "E4YhhNshxIEFeh4KD9KKzznGT1BbMXSX5Mm0CA",
+            "mute": false,
+            "volume": 100,
+            "ph": 1,
+            "pid": "NxsmWX2o",
+            "plugins": {
+                "http://assets-jpcust.jwpsrv.com/player/6/6124956/ping.js": {
+                    "pixel": "http://content.jwplatform.com/ping.gif"
+                }
+            },
+            "preload": "auto",
+            "primary": "html5",
+            "repeat": false,
+            "stagevideo": false,
+            "stretching": "uniform",
+            "visualplaylist": false,
+            "width": "100%"
+        };</script> <script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
                 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
             m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
         })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
