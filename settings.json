@@ -1,5 +1,5 @@
 {
-  "users": [],
+  "users": ["tuan.na913@gmail.com"],
   "isEnabledYoutube": false,
   "youtubeApiUrl": "https://fast-earth-95331.herokuapp.com"
 }
