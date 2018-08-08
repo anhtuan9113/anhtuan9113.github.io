@@ -3,6 +3,6 @@
   "isEnabledYoutube": false,
   "isAutoSync": "true",
   "adUnitBannerIds": ["ca-app-pub-4250685445068479/7760611113"],
-  "adUnitBlockIds": ["ca-app-pub-9473126543409786/3543284455"],
+  "adUnitBlockIds": ["ca-app-pub-4250685445068479/9970490412"],
   "youtubeApiUrl": "https://fast-earth-95331.herokuapp.com"
 }
