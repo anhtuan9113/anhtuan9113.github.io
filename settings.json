@@ -2,7 +2,7 @@
   "users": ["tuan.na913@gmail.com"],
   "isEnabledYoutube": false,
   "isAutoSync": "true",
-  "adUnitBannerIds": ["ca-app-pub-9473126543409786/6391445352", "ca-app-pub-9473126543409786/2375420470"],
+  "adUnitBannerIds": ["ca-app-pub-9473126543409786/4039570527", "ca-app-pub-9473126543409786/2375420470"],
   "adUnitBlockIds": ["ca-app-pub-9473126543409786/6357784127"],
   "youtubeApiUrl": "https://fast-earth-95331.herokuapp.com"
 }
